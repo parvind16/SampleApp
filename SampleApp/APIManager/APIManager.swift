@@ -1,9 +1,9 @@
 //
-//  APIManager.swift
-//  DentaMatch
+// APIManager.swift
+//  SampleApp
 //
-//  Created by Rajan Maheshwari on 12/10/16.
-//  Copyright © 2016 Appster. All rights reserved.
+//  Created by parvind bhatt on 12/02/19.
+//  Copyright © 2019 parvind bhatt. All rights reserved.
 //
 
 import UIKit

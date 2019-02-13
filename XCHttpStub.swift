@@ -1,9 +1,10 @@
+
 //
-//  XCTestHttpStub.swift
-//  Arch
+// XCTestHttpStub.swift
+//  SampleApp
 //
-//  Created by Manoj Babu on 5/3/17.
-//  Copyright © 2017 Sapient. All rights reserved.
+//  Created by parvind bhatt on 12/02/19.
+//  Copyright © 2019 parvind bhatt. All rights reserved.
 //
 
 import Foundation
