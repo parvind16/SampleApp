@@ -45,12 +45,11 @@ class XCHttpStub {
     }
     
     static func request(withPathRegex path: String, withResponseFile responseFile: String) {
-        stub(condition: isPathRegex(path)) { request in
-            
-            print("Request URL: " + request.url!.absoluteString)
-            print("Response file name: " + responseFile)
-            
-            return OHHTTPStubsResponse(fileAtPath: FilePath(responseFile).path, statusCode: 200, headers: [ "Content-Type": "application/json;charset=UTF-8" ])
+        // Swift
+        stub(condition: isHost("api.nytimes.com")) { _ in
+            // Stub it with our "wsresponse.json" stub file (which is in same bundle as self)
+            let stubPath = FilePath(responseFile).path
+            return fixture(filePath: stubPath, headers: ["Content-Type":"application/json"])
         }
     }
     
