@@ -31,4 +31,25 @@ class SampleAppTests: XCTestCase {
         }
     }
 
+    func testRecipeforExternalId() {
+        XCHttpStub.request(withPathRegex: "(.*)\\/item\\/nutrition", withResponseFile: "Article-mock.json")
+        let responseExpectation = expectation(description: "return expected data of nutrition recipe")
+        
+        ArticleListVC().getNotificationList { (isSucess, error) in
+            
+            if isSucess! {
+                
+                XCTAssertNotNil(isSucess, "recipes: expected result achived")
+                XCTAssertNil(error, "error: Expectation fulfilled with error")
+                responseExpectation.fulfill()
+            }else{
+                
+            }
+        }
+        waitForExpectations(timeout: 50) { error in
+            if let error = error {
+                XCTAssertNotNil(error, "Failed to get response from recipe with external Id webservice")
+            }
+        }
+    }
 }

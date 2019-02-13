@@ -27,7 +27,7 @@ class ArticleTableViewCell: UITableViewCell {
     }
 
     func configureArticleTableCell(articleObj:ArticleViewModel) {
-        // this 
+        // this
         articleImageView.layer.cornerRadius = articleImageView.frame.height/2
         articleImageView.clipsToBounds = true
         articleImageView.backgroundColor = .green

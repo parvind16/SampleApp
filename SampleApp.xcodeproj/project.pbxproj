@@ -10,6 +10,8 @@
 		1CF6F2AC4507F0D0169CD8D5 /* Pods_SampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC488F94B3635164D21DAE7 /* Pods_SampleAppTests.framework */; };
 		51198E18221333D100611C35 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51198E17221333D100611C35 /* ArticleTableViewCell.swift */; };
 		51198E1A221336DA00611C35 /* ArticleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51198E19221336DA00611C35 /* ArticleDetailVC.swift */; };
+		51198E1C22134B2A00611C35 /* Article-mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 51198E1B22134B2A00611C35 /* Article-mock.json */; };
+		51198E1E22134C0C00611C35 /* XCHttpStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51198E1D22134C0C00611C35 /* XCHttpStub.swift */; };
 		51312CDB2212FBDD0056260D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51312CDA2212FBDD0056260D /* Constant.swift */; };
 		517777E72212E2C500610B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517777E62212E2C500610B59 /* AppDelegate.swift */; };
 		517777EC2212E2C500610B59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517777EA2212E2C500610B59 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		4B5217D06C360D08E94DB628 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		51198E17221333D100611C35 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		51198E19221336DA00611C35 /* ArticleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailVC.swift; sourceTree = "<group>"; };
+		51198E1B22134B2A00611C35 /* Article-mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Article-mock.json"; sourceTree = SOURCE_ROOT; };
+		51198E1D22134C0C00611C35 /* XCHttpStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCHttpStub.swift; sourceTree = SOURCE_ROOT; };
 		51312CDA2212FBDD0056260D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		517777E32212E2C500610B59 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		517777E62212E2C500610B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				51312CD92212FBCE0056260D /* Util */,
 				517778282212F84400610B59 /* APIManager */,
 				517777E62212E2C500610B59 /* AppDelegate.swift */,
+				51198E1D22134C0C00611C35 /* XCHttpStub.swift */,
+				51198E1B22134B2A00611C35 /* Article-mock.json */,
 				517777EA2212E2C500610B59 /* Main.storyboard */,
 				517777ED2212E2C600610B59 /* Assets.xcassets */,
 				517777EF2212E2C600610B59 /* LaunchScreen.storyboard */,
@@ -339,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51198E1C22134B2A00611C35 /* Article-mock.json in Resources */,
 				517777F12212E2C600610B59 /* LaunchScreen.storyboard in Resources */,
 				517777EE2212E2C600610B59 /* Assets.xcassets in Resources */,
 				517777EC2212E2C500610B59 /* Main.storyboard in Resources */,
@@ -394,6 +401,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -401,6 +409,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +474,7 @@
 				5177782A2212F84400610B59 /* APIManager.swift in Sources */,
 				517778252212EE1100610B59 /* ViewModel.swift in Sources */,
 				5177781E2212E3C700610B59 /* ArticleListVC.swift in Sources */,
+				51198E1E22134C0C00611C35 /* XCHttpStub.swift in Sources */,
 				51198E18221333D100611C35 /* ArticleTableViewCell.swift in Sources */,
 				51312CDB2212FBDD0056260D /* Constant.swift in Sources */,
 			);

@@ -13,7 +13,7 @@ class ArticleListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,11 +26,18 @@ class ArticleListVC: UIViewController {
         tableView.estimatedRowHeight = 60.0
         tableView.rowHeight = UITableView.automaticDimension
         
+        
+        activitySpinner.startAnimating()
         self.getNotificationList { (isSucess, error) in
            
             if isSucess! {
-            }else{
+                self.activitySpinner.stopAnimating()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 
+            }else{
+                self.activitySpinner.stopAnimating()
             }
         }
     }
@@ -93,10 +100,8 @@ extension ArticleListVC : UITableViewDataSource {
 extension ArticleListVC{
     
     func getNotificationList(completionHandler: @escaping (Bool?, NSError?) -> ()) {
-        activitySpinner.startAnimating()
 
         APIManager.apiGet(serviceName: Constant.API.viewAllSection, parameters: nil) { (response:JSON?, error:NSError?) in
-            self.activitySpinner.stopAnimating()
 
             if error != nil {
                 return
@@ -105,12 +110,10 @@ extension ArticleListVC{
                 return
             }
             
-            //debugPrint(response!)
             let status = response![Constant.ServerKey.status].stringValue
             if status == "OK"{
                 let resultDic = response![Constant.ServerKey.result].arrayValue
-                debugPrint(resultDic)
-
+                
                 for dictObj in resultDic {
                     let article = ArticleDataModel(title:dictObj["title"].stringValue, author: dictObj["createdAt"].stringValue, date: dictObj["published_date"].stringValue, titleDescription:dictObj["abstract"].stringValue,
                         imageLink:dictObj["url"].stringValue)
@@ -120,17 +123,11 @@ extension ArticleListVC{
                     debugPrint(article.imageLink)
                 }
                 
-             
                 completionHandler(true, error)
-                //do next
+
             } else {
                
-                
             }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
         }
     }
 }
